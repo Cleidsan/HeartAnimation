@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corazon Animation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            width: 100%;
+            height: 100vh;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #heart {
+            width: 450px;
+            height: 450px;
+            background-color: red;
+            box-shadow: 10px 10px 90px red;
+            position: relative;
+            animation: animeHeart .8s linear infinite;
+        }
+
+        @keyframes animeHeart {
+            0% {
+                transform: rotate(-45deg) scale(1);
+            }
+            50% {
+                transform: rotate(-45deg) scale(1.2);
+            }
+            100% {
+                transform: rotate(-45deg) scale(1);
+            }
+        }
+
+        #heart::before {
+            content: "";
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            top: -230px;
+            background-color: rgb(255, 0, 0);
+            box-shadow: 10px 10px 90px red;
+        }
+        #heart::after {
+            content: "";
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            right: -230px;
+            box-shadow: 10px 10px 90px red;
+            background-color: rgb(255, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <div id="heart"></div>
+</body>
+</html>
